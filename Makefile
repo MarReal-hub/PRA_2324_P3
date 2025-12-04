@@ -1,14 +1,10 @@
-bin/testListArray: praF_Array.cpp ListArray.h List.h
+bin/testTableEntry: testTableEntry.cpp TableEntry.h
 	mkdir -p bin
-	g++ -o bin/testListArray praF_Linked.cpp ListArray.h
+	g++ -o bin/testTableEntry testTableEntry.cpp
 
 clean:
-	rm -r *.o *.gch bin
+	rm -rf *.o *.gch bin
 
-bin/testNode: testNode.cpp Node.h
+bin/testHashTable: Dict.h HashTable.h TableEntry.h testHashTable.cpp
 	mkdir -p bin
-	g++ -o bin/testNode testNode.cpp Node.h
-
-bin/testListLinked: praF_Linked.cpp ListLinked.h List.h
-	mkdir -p bin
-	g++ -o bin/testListLinked praF_Linked.cpp ListLinked.h
+	g++ -o bin/testHashTable testHashTable.cpp
